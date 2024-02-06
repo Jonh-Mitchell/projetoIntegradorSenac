@@ -1,0 +1,32 @@
+.geral__tabela {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 0;
+}
+.geral__tabela .container__tabela {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px;
+  background-color: #FFFFFF;
+  padding: 40px 20px;
+}
+.geral__tabela .container__tabela .conteudo__tabela-lista .lista__tabela {
+  font-size: 12px;
+  border-bottom: 1px solid;
+  padding: 2px;
+}
+.geral__tabela .btn {
+  margin: 20px 0;
+  background-color: #BEAC95;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px 40px;
+}
+.geral__tabela .btn:hover {
+  background-color: #EDCEA7;
+}/*# sourceMappingURL=tabela.css.map */

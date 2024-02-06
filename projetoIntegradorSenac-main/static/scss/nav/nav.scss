@@ -1,0 +1,49 @@
+@use '../variaveis/variaveis.scss' as v;
+
+.container__nav {
+    align-items: center;
+    background-color: v.$cor-nav;
+    display: flex;
+    gap: 60px;
+    flex-direction: column;
+    min-height: 900px;
+    padding: 20px;
+    position: relative;
+    top: 0;
+    min-height: 80rem;
+    min-width: 17rem;
+    box-shadow: 9px 2px 5px -1px rgba(10,10,10,0.46);
+    -webkit-box-shadow: 9px 2px 5px -1px rgba(10,10,10,0.46);
+    -moz-box-shadow: 9px 2px 5px -1px rgba(10,10,10,0.46);
+
+    .img {
+        width: 260px;
+        height: 60px;
+        background-color: lightgray;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: fixed;
+        top: 150px;
+        margin-top: 40px;
+
+        a {
+            button {
+                color: #ffffff;
+                background-color: v.$cor-botao-nav;
+                width: 200px;
+                padding: 20px 0;
+                border-radius: 10px;
+                border: none;
+                cursor: pointer;
+                &:hover {
+                    background: v.$cor-sombra-botao;
+                }
+            }
+
+        }
+    }
+}
