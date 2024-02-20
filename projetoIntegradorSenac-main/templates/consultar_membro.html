@@ -1,0 +1,125 @@
+{% extends 'template.html' %}
+{% block conteudo %}
+<section class="geral__tabela" id="formulario">
+    <h2 class="titulo__form">Dados do membro cadastrado</h2>
+    <form action="{{url_for("atualizar_membro")}}" method="post" class="container__form">
+        <div class="cpf">
+            {{ form.cpf.label() }}
+            {{ form.cpf(class="input__padrao") }}
+            {{ form.buscar() }}
+        </div>
+    </form>
+    <table class="container__tabela">
+        <th class="titulo__tabela">Dados Pessoais ---------------------------------------------------------------- </th>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Nome</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">RG</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">CPF</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Orgão Expedidor</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Sexo</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Pai</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">Mãe</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Naturalidade</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">UF Nascimento</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">País</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <th class="titulo__tabela">Endereço ---------------------------------------------------------------- </th>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">CEP</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Logradouro</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">Número</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Complemento</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Bairro</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Cidade</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">UF</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Telefone</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <th class="titulo__tabela">Outros Dados ---------------------------------------------------------------- </th>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Data de Nascimento</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Estado Civil</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Nome do conjugê</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Profissão</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Escolaridade</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Data de Batismo</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">Batizado no Espírito Santo</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Entrada no ROL</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Congregação</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">Função</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">Origem</td>
+            <td class="lista__tabela">exemplo</td>
+            <th class="titulo__tabela">Situação</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+        <tr class="titulos__tabela conteudo__tabela-lista">
+            <th class="titulo__tabela">De qual igreja?</td>
+            <td class="lista__tabela">exemplo</td>
+        </tr>
+    </table>
+</section>
+{% endblock %}
