@@ -1,0 +1,64 @@
+.btn-buscar {
+  height: 26px;
+  border: 1px solid;
+  border-left: none;
+  border-radius: 0px 168px 168px 0px;
+  -webkit-border-radius: 0px 168px 168px 0px;
+  -moz-border-radius: 0px 168px 168px 0px;
+}
+
+.cpf {
+  display: flex;
+  align-items: center;
+}
+.cpf label {
+  margin-right: 5px;
+  font-weight: 600;
+  font-size: 22px;
+}
+.cpf .cpf-busca {
+  border-radius: 168px 0px 0px 167px;
+  -webkit-border-radius: 168px 0px 0px 167px;
+  -moz-border-radius: 168px 0px 0px 167px;
+  height: 22px;
+  border: 1px solid;
+  border-right: none;
+}
+
+.geral__tabela {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 120px;
+  padding: 40px 0;
+}
+.geral__tabela .container__tabela {
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 40px 20px;
+  text-align: center;
+}
+.geral__tabela .container__tabela .titulos__tabela .titulo__tabela {
+  border: 1px solid;
+}
+.geral__tabela .container__tabela .conteudo__tabela-lista .lista__tabela {
+  font-size: 12px;
+  border: 1px solid;
+  padding: 2px;
+}
+.geral__tabela .btn {
+  margin: 20px 0;
+  background-color: #BEAC95;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px 40px;
+}
+.geral__tabela .btn:hover {
+  background-color: #EDCEA7;
+}/*# sourceMappingURL=tabela.css.map */

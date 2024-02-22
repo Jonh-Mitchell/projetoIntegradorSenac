@@ -1,0 +1,314 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.conteudo {
+  background-image: url(/static/img/5134341.jpg);
+  /* background-repeat: ; */
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container__header {
+  align-items: center;
+  background-color: #952CAE;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  padding: 40px 20px;
+  position: fixed;
+  right: 0;
+  width: 100%;
+  border-bottom: 0.1rem solid;
+  /* box-shadow: -1px 6px 5px -5px rgba(10,10,10,1);
+  -webkit-box-shadow: -1px 6px 5px -5px rgba(10,10,10,1);
+  -moz-box-shadow: -1px 6px 5px -5px rgba(10,10,10,1);
+   */
+}
+.container__header .container__img {
+  margin-left: 55px;
+}
+.container__header .titulo {
+  width: 100%;
+}
+.container__header .titulo h1 {
+  text-align: center;
+}
+.container__header .icones {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.geral {
+  display: flex;
+}
+
+.container__nav {
+  align-items: center;
+  background-color: #007BFF;
+  display: flex;
+  gap: 60px;
+  flex-direction: column;
+  min-height: 900px;
+  /* padding: 20px; */
+  position: relative;
+  top: 0;
+  min-height: 80rem;
+  min-width: 17rem;
+  box-shadow: 4px -2px 5px 2px rgba(26, 19, 28, 0.56);
+  -webkit-box-shadow: 4px -2px 5px 2px rgba(26, 19, 28, 0.56);
+  -moz-box-shadow: 4px -2px 5px 2px rgba(26, 19, 28, 0.56);
+  /*    .img {
+      width: 260px;
+      height: 60px;
+      background-color: lightgray;
+  } */
+}
+.container__nav .logo {
+  height: 150px;
+  position: fixed;
+}
+.container__nav nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: fixed;
+  top: 100px;
+  margin-top: 60px;
+}
+.container__nav nav a {
+  text-decoration: none;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  background-color: #007BFF;
+  min-width: 17.1rem;
+  min-height: 4rem;
+  padding: 5px 0;
+  /* border-radius: 10px; */
+  /* box-shadow: 0px 5px 6px 0px #000000; */
+  cursor: pointer;
+  transition: 0.5s;
+}
+.container__nav nav a:hover {
+  background: #3363cc;
+}
+.container__nav nav a img {
+  padding: 0.75rem;
+  width: 1.7rem;
+  position: absolute;
+  left: 3px;
+}
+
+.formulario {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 20px 20px;
+}
+.formulario .titulo__form {
+  text-align: center;
+  margin-top: 40px;
+}
+.formulario .container__form {
+  border: 1px solid black;
+  align-self: center;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 2px 3px 18px 4px #6c6a6a;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 20px;
+  width: 434px;
+}
+.formulario .container__form .titulo__categoria {
+  font-weight: 600;
+}
+.formulario .container__form .caixa__form, .formulario .container__form .caixa__estados .uf,
+.formulario .container__form .caixa__estados .pais, .formulario .container__form .cpf,
+.formulario .container__form .rg,
+.formulario .container__form .logradouro,
+.formulario .container__form .numero {
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.formulario .container__form .caixa__form .input__padrao, .formulario .container__form .caixa__estados .uf .input__padrao,
+.formulario .container__form .caixa__estados .pais .input__padrao, .formulario .container__form .cpf .input__padrao,
+.formulario .container__form .rg .input__padrao,
+.formulario .container__form .logradouro .input__padrao,
+.formulario .container__form .numero .input__padrao {
+  border: 0.1rem solid #007BFF;
+  border-radius: 10px;
+  padding: 15px;
+  outline-color: #6f88be;
+}
+.formulario .container__form .caixa__form .input__padrao option, .formulario .container__form .caixa__estados .uf .input__padrao option,
+.formulario .container__form .caixa__estados .pais .input__padrao option, .formulario .container__form .cpf .input__padrao option,
+.formulario .container__form .rg .input__padrao option,
+.formulario .container__form .logradouro .input__padrao option,
+.formulario .container__form .numero .input__padrao option {
+  text-align: center;
+}
+.formulario .container__form .caixa__form label::before, .formulario .container__form .caixa__estados .uf label::before,
+.formulario .container__form .caixa__estados .pais label::before, .formulario .container__form .cpf label::before,
+.formulario .container__form .rg label::before,
+.formulario .container__form .logradouro label::before,
+.formulario .container__form .numero label::before {
+  content: "*";
+}
+.formulario .container__form .caixa__form .nao__obrigatorio::before, .formulario .container__form .caixa__estados .uf .nao__obrigatorio::before,
+.formulario .container__form .caixa__estados .pais .nao__obrigatorio::before, .formulario .container__form .cpf .nao__obrigatorio::before,
+.formulario .container__form .rg .nao__obrigatorio::before,
+.formulario .container__form .logradouro .nao__obrigatorio::before,
+.formulario .container__form .numero .nao__obrigatorio::before {
+  content: "";
+}
+.formulario .container__form .caixa__dupla {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+.formulario .container__form .logradouro {
+  width: 80%;
+}
+.formulario .container__form .numero {
+  width: 20%;
+}
+.formulario .container__form .caixa__sexo {
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.formulario .container__form .caixa__estados {
+  justify-content: space-between;
+  display: flex;
+  gap: 10px;
+}
+.formulario .container__form .caixa__estados .uf,
+.formulario .container__form .caixa__estados .pais {
+  width: 100%;
+}
+.formulario .container__form .btn {
+  margin: 20px 0;
+  background-color: #BEAC95;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px 40px;
+}
+.formulario .container__form .btn:hover {
+  background-color: #EDCEA7;
+}
+
+.btn-buscar {
+  height: 26px;
+  border: 1px solid;
+  border-left: none;
+  border-radius: 0px 168px 168px 0px;
+  -webkit-border-radius: 0px 168px 168px 0px;
+  -moz-border-radius: 0px 168px 168px 0px;
+}
+
+.cpf {
+  display: flex;
+  align-items: center;
+}
+.cpf label {
+  margin-right: 5px;
+  font-weight: 600;
+  font-size: 22px;
+}
+.cpf .cpf-busca {
+  border-radius: 168px 0px 0px 167px;
+  -webkit-border-radius: 168px 0px 0px 167px;
+  -moz-border-radius: 168px 0px 0px 167px;
+  height: 22px;
+  border: 1px solid;
+  border-right: none;
+}
+
+.geral__tabela {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 120px;
+  padding: 40px 0;
+}
+.geral__tabela .container__tabela {
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 40px 20px;
+  text-align: center;
+}
+.geral__tabela .container__tabela .titulos__tabela .titulo__tabela {
+  border: 1px solid;
+}
+.geral__tabela .container__tabela .conteudo__tabela-lista .lista__tabela {
+  font-size: 12px;
+  border: 1px solid;
+  padding: 2px;
+}
+.geral__tabela .btn {
+  margin: 20px 0;
+  background-color: #BEAC95;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px 40px;
+}
+.geral__tabela .btn:hover {
+  background-color: #EDCEA7;
+}
+
+@media print {
+  .no-print {
+    visibility: hidden;
+  }
+  @page {
+    size: auto; /* Pode ser 'auto', 'A4', 'letter', etc. */
+    margin: 0; /* Remove as margens padrão */
+  }
+  /* Torna o conteúdo visível ocupar toda a folha */
+  .geral__tabela {
+    width: 100%;
+    height: 100%;
+  }
+  .geral__tabela .container__tabela {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .geral__tabela .container__tabela .conteudo__tabela-lista .lista__tabela {
+    font-size: 10px;
+  }
+  .print {
+    visibility: visible;
+  }
+}
+.container__footer {
+  background-color: #756D7B;
+  padding: 40px 0;
+}
+.container__footer p {
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

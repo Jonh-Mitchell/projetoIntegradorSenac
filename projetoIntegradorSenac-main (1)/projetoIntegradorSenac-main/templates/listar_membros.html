@@ -1,0 +1,32 @@
+{% extends 'template.html' %}
+{% block conteudo %}
+<section class="geral__tabela">
+  <h2 class="titulo__pagina">Consultar Membro</h2>
+  <table class="container__tabela print">
+    <tr class="titulos__tabela">
+      <th class="titulo__tabela">Nome</th>
+      <th class="titulo__tabela">RG</th>
+      <th class="titulo__tabela">CPF</th>
+      <th class="titulo__tabela">Org. expedidor</th>
+      <th class="titulo__tabela">Pai</th>
+      <th class="titulo__tabela">Mãe</th>
+    </tr>
+    {% for membro in membros %}
+    <tr class="conteudo__tabela-lista">
+      <td class="lista__tabela">{{ membro.nome }}</td>
+      <td class="lista__tabela">{{ membro.rg }}</td>
+      <td class="lista__tabela">{{ membro.cpf }}</td>
+      <td class="lista__tabela">{{ membro.orgao_expedidor }}</td>
+      <td class="lista__tabela">{{ membro.pai }}</td>
+      <td class="lista__tabela">{{ membro.mae }}</td>
+      <td class="no-print">
+        <a href="{{ url_for('editar', id=membro.id) }}">Editar</a>
+        <a href="{{ url_for('deletar', id=membro.id) }}">Deletar</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <button class="btn" id="btnPdf">Salvar</button>
+</section>
+
+{% endblock %}

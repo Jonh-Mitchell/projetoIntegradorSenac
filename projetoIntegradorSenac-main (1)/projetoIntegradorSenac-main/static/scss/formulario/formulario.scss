@@ -1,0 +1,123 @@
+@use '../variaveis/variaveis.scss' as v;
+
+.formulario {
+   
+    font-size: 1.2rem;
+    display:flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 20px 20px;
+    
+
+   
+    
+
+    .titulo__form {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .container__form {
+        border: 1px solid black;
+        align-self:center;
+        background-color:#FFFFFF;
+        border-radius: 10px;
+        box-shadow: 2px 3px 18px 4px #6c6a6a;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 20px;
+        width: 434px;
+
+        // .nao__obrigatorio::before {
+        //     content: '';
+        // }
+        .titulo__categoria {
+            font-weight: 600;
+        }
+
+        .caixa__form {
+            font-size: large;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+                
+        
+            .input__padrao {
+                
+                border: 0.100rem solid v.$cor-nav;
+                border-radius: 10px;
+                padding: 15px;
+                outline-color: v.$cor-botao-nav;
+                option {
+                    text-align: center;
+                }
+            }
+
+            label {
+                &::before {
+                    content: '*';
+                }
+            }
+
+            .nao__obrigatorio::before {
+                content: '';
+            }
+        }
+
+        .caixa__dupla {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .cpf,
+        .rg,
+        .logradouro,
+        .numero {
+            @extend .caixa__form;
+        }
+
+        .logradouro {
+            width: 80%;
+        }
+
+        .numero {
+            width: 20%
+        }
+
+        .caixa__sexo {
+            background: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .caixa__estados {
+            justify-content: space-between;
+            display: flex;
+            gap: 10px;
+
+            .uf,
+            .pais {
+                @extend .caixa__form;
+                width: 100%;
+            }
+
+        }
+
+        .btn {
+            margin: 20px 0;
+            background-color: v.$cor-secundaria;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            padding: 10px 40px;
+
+            &:hover {
+                background-color: v.$cor-primaria;
+            }
+        }
+    }
+}

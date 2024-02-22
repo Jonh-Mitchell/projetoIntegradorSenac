@@ -1,0 +1,186 @@
+{% extends 'template.html' %}
+{% block conteudo %}
+<section class="formulario" id="formulario">
+    <h2 class="titulo__form">Cadastro de Membro</h2>
+    <form action="{{ url_for('cadastrar_no_banco') }}" method="post" class="container__form">
+        <span class="titulo__categoria">Identificação</span>
+        {{ form.csrf_token() }}
+        <div class="caixa__form">
+            {{ form.nome.label() }}
+            {{ form.nome(class="input__padrao", id="nome") }}
+        </div>
+        <div class="caixa__dupla">
+            <div class="rg input-number">
+                {{ form.rg.label() }}
+                {{ form.rg(class="input__padrao", id="rg") }}
+            </div>
+            <div class="cpf">
+                {{ form.cpf.label() }}
+                {{ form.cpf(class="input__padrao", id="cpf", oninput="mascara(this)") }}
+            </div>
+            <p>{{ p }}</p>
+        </div>
+        <div class="caixa__form">
+            {{ form.orgao_expedidor.label() }}
+            {{ form.orgao_expedidor(class="input__padrao", id="orgaoExpedidor") }}
+        </div>
+        <div class="caixa__form">
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo" class="input__padrao">
+                {% for value, label in form.sexo.choices %}
+                <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="caixa__form">
+            {{ form.pai.label() }}
+            {{ form.pai(class="input__padrao", id="pai") }}
+        </div>
+        <div class="caixa__form">
+            {{ form.mae.label() }}
+            {{ form.mae(class="input__padrao", id="mae") }}
+        </div>
+        <div class="caixa__form">
+            {{ form.naturalidade.label() }}
+            {{ form.naturalidade(class="input__padrao", id="naturalidade") }}
+        </div>
+        <div class="caixa__estados">
+            <div class="uf">
+                <label for="ufIdentidade">UF Identidade:</label>
+                <select id="ufIdentidade" name="ufIdentidade" class="input__padrao">
+                    {% for value, label in form.ufIdentidade.choices %}
+                    <option value="{{ value }}">{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="pais">
+                {{ form.pais.label() }}
+                {{ form.pais(class="input__padrao", id="pais", value="Brasil") }}
+            </div>
+        </div>
+        <span class="titulo__categoria">Endereço</span>
+        <div class="caixa__form">
+            {{ form.cep.label() }}
+            {{ form.cep(class="input__padrao input-number", id="cep") }}
+            <p id="erro"></p>
+        </div>
+        <div class="caixa__dupla">
+            <div class="logradouro">
+                {{ form.logradouro.label() }}
+                {{ form.logradouro(class="input__padrao", id="logradouro") }}
+            </div>
+            <div class="numero input-number">
+                {{ form.numero.label() }}
+                {{ form.numero(class="input__padrao", id="numero") }}
+            </div>
+        </div>
+        <div class="caixa__form">
+            {{ form.complemento.label() }}
+            {{ form.complemento(class="input__padrao", id="complemento") }}
+        </div>
+        <div class="caixa__form">
+            {{ form.bairro.label() }}
+            {{ form.bairro(class="input__padrao", id="bairro") }}
+        </div>
+        <div class="caixa__estados">
+            <div class="pais">
+                {{ form.cidade.label() }}
+                {{ form.cidade(class="input__padrao", id="cidade") }}
+            </div>
+            <div class="uf">
+                <label for="ufEndereco">UF</label>
+                <select id="ufEndereco" name="ufEndereco" class="input__padrao">
+                    {% for value, label in form.ufEndereco.choices %}
+                    <option value="{{ value }}">{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="caixa__form">
+            {{ form.telefone.label() }}
+            {{ form.telefone(class="input__padrao", id="telefone") }}
+        </div>
+        <span class="titulo__categoria">Outros Dados</span>
+        <div class="caixa__form">
+            {{ form.dataNascimento.label() }}
+            {{ form.dataNascimento(class="input__padrao", id="dataNascimento") }}
+        </div>
+        <div class="caixa__form">
+            <label for="estadoCivil">Estado Civil</label>
+            <select id="estadoCivil" name="estadoCivil" class="input__padrao">
+                {% for value, label in form.estadoCivil.choices %}
+                <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="caixa__form">
+            {{ form.nomeConjuge.label() }}
+            {{ form.nomeConjuge(class="input__padrao", id="nomeConjuge") }}
+        </div>
+        <div class="caixa__form">
+            {{ form.profissao.label() }}
+            {{ form.profissao(class="input__padrao", id="profissao") }}
+        </div>
+        <div class="caixa__form">
+            <label for="escolaridade">Escolaridade</label>
+            <select id="escolaridade" name="escolaridade" class="input__padrao">
+                {% for value, label in form.escolaridade.choices %}
+                <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="caixa__form">
+            {{ form.dataDeBatismo.label() }}
+            {{ form.dataDeBatismo(class="input__padrao", id="dataDeBatismo") }}
+        </div>
+        <div class="caixa__form">
+            <label for="batizado">Batizado no Espírito Santo?</label>
+            <select id="batizado" name="batizado" class="input__padrao">
+                {% for value, label in form.batizado.choices %}
+                <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="caixa__form">
+            {{ form.entradaRol.label() }}
+            {{ form.entradaRol(class="input__padrao", id="entradaRol") }}
+        </div>
+        <div class="caixa__form">
+            {{ form.congregacao.label() }}
+            {{ form.congregacao(class="input__padrao input-number", id="congregacao") }}
+        </div>
+        <div class="caixa__form">
+            <label for="funcao">Função:</label>
+            <select id="funcao" name="funcao" class="input__padrao">
+                {% for value, label in form.funcao.choices %}
+                <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="caixa__form">
+            <label for="origem">Origem:</label>
+            <select id="origem" name="origem" class="input__padrao">
+                {% for value, label in form.origem.choices %}
+                <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="caixa__form">
+            <label for="situacao">Situação:</label>
+            <select id="situacao" name="situacao" class="input__padrao">
+                {% for value, label in form.situacao.choices %}
+                <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="caixa__form">
+            {{ form.observacao.label() }}
+            {{ form.observacao(class="input__padrao", id="observacao") }}
+        </div>
+        <div>
+            {{ form.cadastrar(class="btn") }}
+        </div>   
+    </form>
+</section>
+
+{% endblock %}
