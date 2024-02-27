@@ -1,8 +1,28 @@
 {% extends 'template.html' %}
 {% block conteudo %}
 
-<section class="geral__tabela">
-    <p> Total de membros cadastrados: {{ contagem }}</p>
+<section class="dashboard">
+    <div class="dashboard__total__membros">
+        <h1> Total de Membros</h1>
+        <p>{{ total_de_membros }}</p>
+    </div>
+
+    <div class="dashboard__tabela">
+        <h1 class="titulo">Aniversariantes do mês</h1>
+        <table class="dashboard__container__tabela">
+            
+            <tr class="titulos__tabela conteudo__tabela-lista">
+                <th class="titulo__tabela">Nome</th>
+                <th class="titulo__tabela">Data de Nascimento</th>
+            </tr> 
+            {% for membro in membros %}
+            <tr class="conteudo__tabela-lista">
+                <td class="lista__tabela">{{ membro.nome }}</td>
+                <td class="lista__tabela">{{ membro.data_nascimento.strftime('%d/%m/%Y') }}</td>
+            </tr>               
+            {% endfor %}
+        </table>
+    </div>
 </section>
 
 

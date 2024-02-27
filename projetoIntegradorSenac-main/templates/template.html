@@ -4,61 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Cadastro</title>
+    <title>{{ titulo }}</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../static/js/salvar_pdf.js" defer></script>
+    <link rel="shortcut icon" href="../static/img/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../static/scss/style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <section class="geral">
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul id="messages" class="list-unstyled">
-            {% for message in messages %}
-            <li class="alert alert-success">{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
         <div class="container__nav no-print">
             <img class="logo" src="../static/img/logo.png" alt="">
             <nav>
-                <a href="{{ url_for('index') }}"><button type="button"><img src="../static/img/house-fill.svg" alt="">Inicial</button></a>
-                <a href="{{ url_for('formulario_de_cadastro') }}"><button type="button"><img src="../static/img/person-fill-add.svg" alt="">Cadastrar</button></a>
-                <a href="{{ url_for('lista_de_membros') }}"><button type="button"><img src="../static/img/listar.svg" alt="">Listar membros</button></a>
-                <a href="{{ url_for('consultar_membro') }}"><button type="button">Membro</button></a>
-                
-                <a href="#"><button type="button">Grupos</button></a>
-                <a href="#"><button type="button">Configurações</button></a>
-                <a href="{{url_for('logout')}}"><button type="button"><img src="../static/img/saida.svg" alt="">Sair</button></a>
+                <a href="{{ url_for('index') }}"><img src="../static/img/house-fill.svg"
+                        alt="Imagem de uma casa na cor branca">Início</a>
+                <a href="{{ url_for('formulario_de_cadastro') }}"><img src="../static/img/person-fill-add.svg"
+                        alt="imagem de um boneco com um sinal de mais">Cadastrar</a>
+                <a href="{{ url_for('lista_de_membros') }}"><img src="../static/img/listar.svg"
+                        alt="Imagem de uma prancheta">Listar</a>
+                <a href="{{ url_for('consultar_membro') }}"><img src="../static/img/bx-search-alt.svg" alt="">Consultar</a>
+                <a href="{{url_for('logout')}}"><img src="../static/img/saida.svg" alt="">Sair</a>
             </nav>
         </div>
-        <!-- <img class="logo" src="../static/img/sgmad-removebg-preview.png" alt=""> -->
+
         <div class="conteudo no-print">
-           <!--  <div class="container__header">
-                <div class="container__img">
-                    <img class="logo" src="../static/img/sgmad-removebg-preview.png" alt="">
-                </div>
-                <div class="titulo">
-                    <h1>Sistema de Gerenciamento</h1>
-                </div>
-                <div class="icones">
-                    <img src="../static/img/Dark.png" alt="Icone de uma lua que altera para o modo escuro">
-                    <img src="../static/img/Notificação.png" alt="Icone de um sino para notificação sobre avisos">
-                </div>
-            </div> -->
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul id="messages" class="list-unstyled">
+                {% for message in messages %}
+                <li class="alert alert-success">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
             {% block conteudo %} {% endblock %}
         </div>
     </section>
 
     <script src="../static/js/preencherEndereco.js"></script>
-    <script src="../static/js/liberarEnvio.js"></script>
-    <script src="../static/js/salvar_pdf.js"></script>
-    <script src="../static/js/validaConsultaMembro.js"></script>
-    <script src="../static/js/formatarData.js"></script>
+    <script src="../static/js/mascara.js"></script>
+    <script src="../static/js/valida_select.js"></script>
 </body>
 
 </html>

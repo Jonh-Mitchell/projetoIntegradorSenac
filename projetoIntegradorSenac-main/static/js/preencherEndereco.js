@@ -9,7 +9,7 @@ async function buscaEndereco(cep) {
         }
         var cidade = document.getElementById('cidade');
         var logradouro = document.getElementById('logradouro');
-        var estado = document.getElementById('estados');
+        var estado = document.getElementById('ufEndereco');
         var bairro = document.getElementById('bairro')
 
         cidade.value = consultaCEPConvertida.localidade;

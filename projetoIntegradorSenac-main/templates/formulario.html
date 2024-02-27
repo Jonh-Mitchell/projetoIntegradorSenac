@@ -1,10 +1,7 @@
 {% extends 'template.html' %}
 {% block conteudo %}
 <section class="formulario" id="formulario">
-    <!-- <div class="barra__progresso">
-        <img src="../static/img/progresso25.png" alt="Barra de progresso iniciando em 25%">
-    </div> -->
-    <h2 class="titulo__form">Formulário de cadastro</h2>
+    <h2 class="titulo__form">Cadastro de Membro</h2>
     <form action="{{ url_for('cadastrar_no_banco') }}" method="post" class="container__form">
         <span class="titulo__categoria">Identificação</span>
         {{ form.csrf_token() }}
@@ -13,13 +10,13 @@
             {{ form.nome(class="input__padrao", id="nome") }}
         </div>
         <div class="caixa__dupla">
-            <div class="rg">
+            <div class="rg input-number">
                 {{ form.rg.label() }}
                 {{ form.rg(class="input__padrao", id="rg") }}
             </div>
-            <div class="cpf">
+            <div class="cpf-form">
                 {{ form.cpf.label() }}
-                {{ form.cpf(class="input__padrao", id="cpf") }}
+                {{ form.cpf(class="input__padrao", oninput="criaMascara('cpf')") }}
             </div>
             <p>{{ p }}</p>
         </div>
@@ -64,7 +61,7 @@
         <span class="titulo__categoria">Endereço</span>
         <div class="caixa__form">
             {{ form.cep.label() }}
-            {{ form.cep(class="input__padrao", id="cep") }}
+            {{ form.cep(class="input__padrao input-number", oninput="criaMascara('cep')") }}
             <p id="erro"></p>
         </div>
         <div class="caixa__dupla">
@@ -72,7 +69,7 @@
                 {{ form.logradouro.label() }}
                 {{ form.logradouro(class="input__padrao", id="logradouro") }}
             </div>
-            <div class="numero">
+            <div class="numero input-number">
                 {{ form.numero.label() }}
                 {{ form.numero(class="input__padrao", id="numero") }}
             </div>
@@ -101,7 +98,7 @@
         </div>
         <div class="caixa__form">
             {{ form.telefone.label() }}
-            {{ form.telefone(class="input__padrao", id="telefone") }}
+            {{ form.telefone(class="input__padrao", oninput="criaMascara('telefone')") }}
         </div>
         <span class="titulo__categoria">Outros Dados</span>
         <div class="caixa__form">
@@ -150,7 +147,7 @@
         </div>
         <div class="caixa__form">
             {{ form.congregacao.label() }}
-            {{ form.congregacao(class="input__padrao", id="congregacao") }}
+            {{ form.congregacao(class="input__padrao input-number", id="congregacao") }}
         </div>
         <div class="caixa__form">
             <label for="funcao">Função:</label>
@@ -182,10 +179,7 @@
         </div>
         <div>
             {{ form.cadastrar(class="btn") }}
-        </div>
-
-                    
-                    
+        </div>   
     </form>
 </section>
 

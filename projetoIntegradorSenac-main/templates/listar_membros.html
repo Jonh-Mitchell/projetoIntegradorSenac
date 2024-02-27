@@ -3,6 +3,7 @@
 <section class="geral__tabela">
   <h2 class="titulo__pagina">Membros cadastrados</h2>
   <table class="container__tabela print">
+    <tbody>
     <tr class="titulos__tabela">
       <th class="titulo__tabela">Nome</th>
       <th class="titulo__tabela">RG</th>
@@ -20,13 +21,14 @@
       <td class="lista__tabela">{{ membro.pai }}</td>
       <td class="lista__tabela">{{ membro.mae }}</td>
       <td class="no-print">
-        <a href="{{url_for('editar', id=membro.id)}}">Editar</a>
-        <a href="{{url_for('deletar', id=membro.id)}}">Deletar</a>
+        <a href="{{ url_for('editar', id=membro.id) }}"><img class="img-tabela" src="../static/img/editar.svg" alt=""></a>
+        <a href="{{ url_for('deletar', id=membro.id) }}"><img class="img-tabela edit-list"src="../static/img/trash.svg" alt=""></a>
       </td>
     </tr>
+  </tbody>
     {% endfor %}
   </table>
-  <button class="btn" id="btnPdf" ondblclick="">Salvar</button>
+  <button class="btn" id="btnPdf">Salvar</button>
 </section>
 
 {% endblock %}
