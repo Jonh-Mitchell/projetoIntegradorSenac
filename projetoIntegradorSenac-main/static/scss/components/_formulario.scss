@@ -1,0 +1,124 @@
+@use '../abstract/variaveis' as v;
+@use '../abstract/mixins';
+
+.formulario {
+    @include mixins.dflex-aitems-jcontent-flexd-gap(stretch, flex-start, column, 0);
+
+    padding: 20px 20px;
+
+    .titulo__form {
+        @include mixins.fs-fc-fw(v.$font-titulo, v.$cor-font-texto-padrao, 600);
+        margin-top: 40px;
+        text-shadow: v.$cor-text-shadow;
+        text-align: center;
+    }
+
+    .container__form {
+        @include mixins.dflex-aitems-jcontent-flexd-gap(stretch, flex-start, column, 10px);
+
+        align-self: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: none;
+        border-radius: 10px;
+        box-shadow: 2px 3px 18px 4px #6c6a6a;
+        padding: 40px 20px;
+        width: 434px;
+
+        .nao__obrigatorio::before {
+            content: '';
+        }
+
+        .cpf-editar {
+            width: 86%;
+        }
+
+        .titulo__categoria {
+            @include mixins.fs-fc-fw(v.$font-subtitulo, v.$cor-font-texto-padrao, 500);
+        }
+
+        .caixa__form {
+            @include mixins.dflex-aitems-jcontent-flexd-gap(stretch, flex-start, column, 10);
+
+            .input__label {
+                @include mixins.fs-fc-fw(v.$font-texto-padrao, v.$cor-font-texto-padrao, 400);
+            }
+
+            .input__padrao {
+
+                border: 0.100rem solid v.$cor-nav;
+                border-radius: 10px;
+                padding: 15px;
+                outline-color: v.$cor-botao-nav;
+                background-color: v.$bd-input;
+
+                option {
+                    text-align: center;
+                }
+            }
+
+            label {
+                &::before {
+                    content: '*';
+                }
+            }
+
+            .nao__obrigatorio::before {
+                content: '';
+            }
+        }
+
+        .caixa__dupla {
+            @include mixins.dflex-aitems-jcontent-flexd-gap(stretch, space-between, row, 30px);
+
+            #cpf {
+                width: 100%;
+            }
+            #rg {
+                width: 95%;
+            }
+
+            .input__label {
+                @include mixins.fs-fc-fw(v.$font-texto-padrao, v.$cor-font-texto-padrao, 400);
+            }
+        }
+
+        .cpf-form,
+        .rg,
+        .logradouro,
+        .numero {
+            @extend .caixa__form;
+        }
+
+        .logradouro {
+            width: 80%;
+        }
+
+        .numero {
+            width: 20%
+        }
+
+        .caixa__estados {
+            @include mixins.dflex-aitems-jcontent-flexd-gap(center, space-between, row, 10px);
+
+            .uf,
+            .pais {
+                @extend .caixa__form;
+                width: 100%;
+            }
+
+        }
+
+        .btn {
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            padding: 10px 40px;
+            color: white;
+            background-color: #3752ad;
+
+            &:hover {
+                background-color: v.$bd-btn-hover;
+            }
+        }
+    }
+}
